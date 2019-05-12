@@ -11,10 +11,7 @@ RUN apt-get update && \
     apt-get -y install nedge \
     --fix-missing
 
-#RUN echo '#!/bin/bash\n/etc/init.d/redis-server start\nntopng "$@"' > /run.sh && \
-#    chmod +x /run.sh
-
-RUN echo '#!/bin/bash\nnedge "$@"' > /run.sh && \
+RUN echo '#!/bin/bash\n/etc/init.d/redis-server start\nnnedge "$@"' > /run.sh && \
     chmod +x /run.sh
 
 EXPOSE 3000
